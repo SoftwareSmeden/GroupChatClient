@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.groupchat.controller.UI">
+   <children>
+      <Label layoutX="115.0" layoutY="28.0" prefHeight="105.0" prefWidth="426.0" text="MESSENGER">
+         <font>
+            <Font name="System Bold" size="72.0" />
+         </font>
+      </Label>
+      <TextField fx:id="input_tf" layoutX="264.0" layoutY="444.0" prefHeight="25.0" prefWidth="296.0" promptText="Skriv her..." />
+      <Button fx:id="send_btn" layoutX="558.0" layoutY="444.0" mnemonicParsing="false" text="Send" />
+      <Group layoutX="31.0" layoutY="528.0">
+         <children>
+            <TextField fx:id="user_tf" layoutX="38.0" promptText="Chat name..." text="Chatnavn" />
+            <TextField fx:id="hostname_tf" layoutX="38.0" layoutY="34.0" promptText="IP adresse" text="localhost" />
+            <TextField fx:id="port_tf" layoutX="38.0" layoutY="68.0" prefHeight="25.0" prefWidth="71.0" promptText="Port-nummer" text="8989" />
+            <Button fx:id="connect_btn" layoutX="127.0" layoutY="68.0" mnemonicParsing="false" onAction="#connectToServer" text="Connect" />
+            <Label layoutX="1.0" layoutY="38.0" text="Host" />
+            <Label layoutX="3.0" layoutY="72.0" text="Port" />
+            <Label layoutY="4.0" text="User" />
+         </children>
+      </Group>
+      <Group layoutX="463.0" layoutY="614.0">
+         <children>
+            <Label text="Status:" />
+            <Label fx:id="status_label" alignment="TOP_RIGHT" layoutX="38.0" prefHeight="17.0" prefWidth="103.0" textAlignment="RIGHT" />
+         </children>
+      </Group>
+      <ScrollPane fx:id="chat_sp" layoutX="265.0" layoutY="201.0" prefHeight="216.0" prefWidth="336.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="214.0" prefWidth="333.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="264.0" layoutY="166.0" text="CONVERSATION">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="166.0" text="CHATS">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="groupChats_sp" layoutX="31.0" layoutY="201.0" prefHeight="216.0" prefWidth="205.0">
+         <content>
+            <VBox fx:id="groupChats_vBox" prefHeight="214.0" prefWidth="203.0" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="clearChat_btn" layoutX="496.0" layoutY="486.0" mnemonicParsing="false" text="Clear chat (TEST)" />
+      <Button fx:id="disconnect_btn" layoutX="255.0" layoutY="534.0" mnemonicParsing="false" text="Disconnect" />
+   </children>
+</AnchorPane>
